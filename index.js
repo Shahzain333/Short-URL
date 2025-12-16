@@ -8,7 +8,7 @@ const app = express();
 const PORT = 3000;
 
 // Connection to the database
-connectToDatabase('mongodb://localhost:27017/short-url');
+connectToDatabase(process.env.MONGODB ?? 'mongodb://localhost:27017/short-url');
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
